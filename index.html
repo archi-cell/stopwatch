@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Discussion App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Heading -->
+    <header>
+        <h1 style="text-align: center; color: #007BFF; font-weight: 600; margin-top: 20px;">Welcome to the Discussion Portal</h1>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Pane: List of questions -->
+        <div id="left-pane">
+            <h2>Questions</h2>
+            <ul id="question-list">
+                <!-- Questions will be dynamically added here -->
+            </ul>
+        </div>
+
+        <!-- Right Pane: Question Form and Responses -->
+        <div id="right-pane">
+            <!-- Question form -->
+            <div id="question-form">
+                <h2>Ask a Question</h2>
+                <form id="new-question-form">
+                    <label for="title">Title (required):</label>
+                    <input type="text" id="title" name="title" required placeholder="Enter your question title"><br>
+                    <span class="error-message" id="title-error"></span>
+
+                    <label for="question">Question (required):</label>
+                    <textarea id="question" name="question" required placeholder="Describe your question"></textarea><br>
+                    <span class="error-message" id="question-error"></span>
+
+                    <button type="submit">Submit Question</button>
+                </form>
+            </div>
+
+            <!-- Question and Responses -->
+            <div id="question-display" class="hidden">
+                <h2 id="display-title"></h2>
+                <p id="display-question"></p>
+                
+                <!-- Resolve button -->
+                <button id="resolve-btn" class="hidden">Resolve</button>
+                
+                <!-- Response Form -->
+                <h3>Responses</h3>
+                <form id="response-form">
+                    <label for="name">Name (required):</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name"><br>
+                    <span class="error-message" id="name-error"></span>
+
+                    <label for="comment">Comment (required):</label>
+                    <textarea id="comment" name="comment" required placeholder="Add your comment"></textarea><br>
+                    <span class="error-message" id="comment-error"></span>
+
+                    <button type="submit">Submit Response</button>
+                </form>
+
+                <!-- Responses list -->
+                <ul id="responses-list">
+                    <!-- Responses will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
